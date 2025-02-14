@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const tweetSchema = mongoose.Schema({
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
     message: String,
-    date: Date, // à vérifier
+    date: Date,
     nbLike: Number,
-    // user: { type: mongoose.Schema.Types.ObjectId, ref: "users" }
 });
 
 const Tweet = mongoose.model('tweets', tweetSchema);
